@@ -5,11 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Component Example</title>
+
+    <style>
+      h3 {
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <h3>Hello World</h3>
 
-    <user-card></user-card>
+    <user-card
+      avatar="http://randomuser.me/api/portraits/men/1.jpg"
+      name="Alex Govea"
+    ></user-card>
+    <user-card
+      avatar="http://randomuser.me/api/portraits/women/1.jpg"
+      name="Andrea Govea"
+    ></user-card>
+
     <script src="/app.js"></script>
   </body>
 </html>
