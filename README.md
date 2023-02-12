@@ -1,5 +1,9 @@
 # web-components
-This is a repository to practice using native html web components.
+This is a repository to practice using native html web components. 
+
+# Web Components Definition
+
+Refers to custom elements, templates, and the shadow DOM of a set of technologies.
 
 ## Building Blocks
 
