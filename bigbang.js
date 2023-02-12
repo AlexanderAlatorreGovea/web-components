@@ -1,4 +1,4 @@
-const template = document.createElement('template');
+const template = document.createElement("template");
 template.innerHTML = `
   <div>
     <slot name="list"></slot>
@@ -19,7 +19,29 @@ class BigBang extends HTMLElement {
     let clone = template.content.cloneNode(true);
     shadowRoot.append(clone);
   }
+
+  // define the allowed attributes that the component can pass in
+  static get observedAttributes() {
+    return ["character", "color"];
+  }
+
+  // sync attributes with properties as you want
+  // get and set the attributes
+  get character() {
+    return this.getAttribute("character");
+  }
+  set character(value) {
+    this.setAttribute("character", value);
+  }
+
+  get color() {
+    return this.getAttribute("color");
+  }
+  set color(value) {
+    this.setAttribute("color", value);
+  }
+
+  // handle value and chages to attributes
 }
 
-window.customElements.define('big-bang', BigBang);
-
+window.customElements.define("big-bang", BigBang);

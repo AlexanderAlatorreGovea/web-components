@@ -24,6 +24,13 @@ h3 {
   border-bottom: 2px solid white;
 }
 
+/* 
+ ::part is the inversion of control for the consumer
+ to style the elements
+
+ wit part you cannot target any other element, for example.
+ you cannot do ::part(topper) > span
+*/
 ::part(topper) {
   /* color: chartreuse; */
   font-size: 6rem;

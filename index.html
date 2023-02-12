@@ -12,7 +12,7 @@
       }
     </style>
 
-    <link  rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
     <h3>Hello World</h3>
@@ -47,16 +47,17 @@
 
     <big-bang-styling>
       <h2 slot="title">Characters</h2>
-      <ul slot="list">
-        <li>Alex</li>
-        <li>Alex</li>
-        <li>Alex</li>
-      </ul>
+      <div slot="list"></div>
     </big-bang-styling>
+
+    <big-bang-props character="Leonard" color="cornflowerblue">
+      <h2 slot="title">It all started with...</h2>
+    </big-bang-props>
 
     <script src="/app.js"></script>
     <script src="/main.js"></script>
-    <script src="/bigbang.js"></script>
     <script src="/styling.js"></script>
+    <script src="/bigbang.js"></script>
+    <script src="./propertiesAndAttributes.js"></script>
   </body>
 </html>
