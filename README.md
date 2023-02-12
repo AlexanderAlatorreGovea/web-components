@@ -16,10 +16,30 @@ This is a repository to practice using native html web components.
 
     * disconnectedCallback(): Called every time the element is removed from the DOM. When you want to remove any event listeners.
 
-4. attributeChangedCallback(attributeName, oldValue, newValue): Called when an attribute is added, removed, updated, or replaced. When you have a custom tag you can pass custom attributes like props.
+    * attributeChangedCallback(attributeName, oldValue, newValue): Called when an attribute is added, removed, updated, or replaced. When you have a custom tag you can pass custom attributes like props.
 
 # Shadow DOM 
 
+1. A web API that allows hidden DOM trees to be attached to elements in the regular DOM tree. This shadow DOM tree starts with a shadow root underneath which you can attach any element in the same way as the normal DOM. 
+ 
+    * Shadow host: the regular DOM node that the shadow DOM is attached to.
 
+    * Shadow tree: the DOM tree inside the shadow DOM.
+
+    * Shadow boundary: the place where the shadow DOM end, and the regular DOM begins.
+
+    * Shadow root: the root node of the shadow tree. 
+
+2. Allows us to encapsulate markup apart from the regular DOM. The styling is separate from the rest of the webpage so any global styles won't affect the shadow DOM. 
+
+3. Create shadow DOM by using your customElement.attachShadow({ mode: open }). This creates the shadowRoot that we can reference and interact with. 
 
 # HTML Templates
+
+* Define the encapsulated markup of our web component.
+
+* Template tag stores markup on a page.
+ 
+* Include both HTML and CSS template
+
+* Use slots to add custom text, or make the template dynamic.
