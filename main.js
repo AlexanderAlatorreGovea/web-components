@@ -10,3 +10,7 @@ function changeColor(evt) {
   bb.character = bb.character == "Leonard" ? "Sheldon" : "Leonard";
   bb.color = bb.color == "Leonard" ? "red" : "blue";
 }
+
+function hello() {
+  console.log("hello world");
+}

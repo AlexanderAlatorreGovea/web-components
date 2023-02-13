@@ -47,43 +47,45 @@ class BigBangEvents extends HTMLElement {
     super();
     this.root = this.attachShadow({ mode: "closed" });
     // shadowRoot shields the web component from external styling, mostly
-    let clone = template.content.cloneNode(true);
+    const clone = template.content.cloneNode(true);
     this.root.append(clone);
 
-    // handling slots
-    let btnSlot = this.root.querySelector("p button slot");
-    let htmlSlot = btnSlot.assignedNodes()[0]; //assignedElements()
+    // adding event listeners to the slots
+    const btnSlot = this.root.querySelector("p button slot");
+    const htmlSlot = btnSlot.assignedNodes()[0]; //assignedElements()
 
     if (htmlSlot) {
+      // "slotchanged" runs when something is put inside the slot
       btnSlot.addEventListener("slotchanged", (ev) => {
         console.log(htmlSlot);
       });
 
       //handling events
       btnSlot.parentElement.addEventListener("click", (ev) => {
-        //we want hello() or goodbye()
-        let action =
+        // we want hello() or goodbye()
+        // in the window object does it have a property named hello? (window[this.action] === "function")
+        const action =
           this.action && typeof window[this.action] === "function"
             ? window[this.action]
             : this.defaultActionForBigBangButton;
-        // console.log(action);
+
         action(ev);
       });
     } else {
       btnSlot.parentElement.remove();
     }
   }
+
   defaultActionForBigBangButton() {
-    console.log("Missing a VALID action attribute value");
+    throw new Error("Missing a VALID action attribute value");
   }
 
   // Web Components added or removed from page
   connectedCallback() {
     // when <big-bang> is added to the DOM/page
     console.log("added to page");
-    if (this.color) {
-      this.color = "cornflowerblue";
-    }
+
+    this.color = this.color || "cornflowerblue";
   }
 
   disconnectedCallback() {
@@ -95,15 +97,19 @@ class BigBangEvents extends HTMLElement {
   static get observedAttributes() {
     return ["color", "action"];
   }
+
   get color() {
     return this.getAttribute("color");
   }
+
   set color(value) {
     this.setAttribute("color", value);
   }
+
   get action() {
     return this.getAttribute("action");
   }
+
   set action(value) {
     this.setAttribute("action", value);
   }
