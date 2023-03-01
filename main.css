@@ -39,3 +39,9 @@ h3 {
 ::part(topper) span {
   /* does not work */
 }
+
+
+.outline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
