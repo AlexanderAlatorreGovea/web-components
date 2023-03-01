@@ -42,6 +42,9 @@ h3 {
 
 
 .outline {
+  margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 150px;
+  grid-template-rows: 1fr 1fr;
 }
