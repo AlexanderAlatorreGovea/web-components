@@ -40,11 +40,37 @@ h3 {
   /* does not work */
 }
 
-
 .outline {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 150px;
-  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas:
+    "header header header header"
+    "aside  aside  body   body"
+    "footer footer footer footer";
+  /* grid-row-gap: 20px; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  /* grid-auto-rows: 150px;
+  grid-template-rows: 1fr 1fr; */
+}
+
+.navbar {
+  background-color: black;
+  grid-area: header;
+}
+
+.aside {
+  background-color: red;
+  grid-area: aside;
+  height: 299px;
+}
+
+.body {
+  background-color: aqua;
+  grid-area: body;
+}
+
+.footer {
+  background-color: darkgreen;
+  grid-area: footer;
 }
